@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package com.mycompany.doangiuakynt106client;
+package com.mycompany.doangiuakynt106;
 
 /**
  *
@@ -28,54 +28,93 @@ public class HomeUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup2 = new javax.swing.ButtonGroup();
+        btnAccountCreate = new javax.swing.JButton();
+        btnAccountInfo = new javax.swing.JButton();
         btnSignOut = new javax.swing.JButton();
-        lblHome = new javax.swing.JLabel();
+        btnExit = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        btnSignOut.setText("Đăng Xuất");
+        btnAccountCreate.setText("Tạo tài khoản");
+        btnAccountCreate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAccountCreateActionPerformed(evt);
+            }
+        });
+
+        btnAccountInfo.setText("Thông tin tài khoản");
+
+        btnSignOut.setText("Đăng xuất");
         btnSignOut.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSignOutActionPerformed(evt);
             }
         });
 
-        lblHome.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
-        lblHome.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblHome.setText("GIAO DIỆN CHÍNH");
+        btnExit.setText("Thoát");
+        btnExit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnExitActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(44, 44, 44)
-                .addComponent(lblHome, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(60, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnSignOut)
-                .addGap(22, 22, 22))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnExit, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnSignOut, javax.swing.GroupLayout.Alignment.TRAILING)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(120, 120, 120)
+                                .addComponent(btnAccountInfo))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(135, 135, 135)
+                                .addComponent(btnAccountCreate)))
+                        .addGap(0, 139, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(24, 24, 24)
+                .addContainerGap()
                 .addComponent(btnSignOut)
-                .addGap(55, 55, 55)
-                .addComponent(lblHome)
-                .addContainerGap(171, Short.MAX_VALUE))
+                .addGap(33, 33, 33)
+                .addComponent(btnAccountCreate)
+                .addGap(58, 58, 58)
+                .addComponent(btnAccountInfo)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 132, Short.MAX_VALUE)
+                .addComponent(btnExit)
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_btnExitActionPerformed
+
     private void btnSignOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSignOutActionPerformed
         // TODO add your handling code here:
-        SignOut.SignOutUser();
+        SignOut.SignOutAdmin();
         this.dispose();
         new SignInUI().setVisible(true);
     }//GEN-LAST:event_btnSignOutActionPerformed
+
+    private void btnAccountCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAccountCreateActionPerformed
+        // TODO add your handling code here:
+        new AddUser().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnAccountCreateActionPerformed
 
     /**
      * @param args the command line arguments
@@ -103,7 +142,10 @@ public class HomeUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAccountCreate;
+    private javax.swing.JButton btnAccountInfo;
+    private javax.swing.JButton btnExit;
     private javax.swing.JButton btnSignOut;
-    private javax.swing.JLabel lblHome;
+    private javax.swing.ButtonGroup buttonGroup2;
     // End of variables declaration//GEN-END:variables
 }
