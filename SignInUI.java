@@ -2,8 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package com.mycompany.doangiuakynt106;
-import javax.swing.*;
+package com.mycompany.doangiuakynt106client;
+
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -29,50 +30,43 @@ public class SignInUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        lblPassword = new javax.swing.JLabel();
-        lblEmail = new javax.swing.JLabel();
-        tfEmail = new javax.swing.JTextField();
+        tfUsername = new javax.swing.JTextField();
         tfPassword = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
+        lblUsername = new javax.swing.JLabel();
+        lblPassword = new javax.swing.JLabel();
         btnSignIn = new javax.swing.JButton();
         btnForgotPassword = new javax.swing.JButton();
-        btnSignUp = new javax.swing.JButton();
+        lblSignIn = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        addWindowStateListener(new java.awt.event.WindowStateListener() {
-            public void windowStateChanged(java.awt.event.WindowEvent evt) {
-                formWindowStateChanged(evt);
+
+        tfPassword.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfPasswordActionPerformed(evt);
             }
         });
 
-        lblPassword.setText("Mật khẩu");
+        lblUsername.setText("Tên Tài Khoản");
 
-        lblEmail.setText("Email");
+        lblPassword.setText("Mật Khẩu");
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("ĐĂNG NHẬP");
-
-        btnSignIn.setText("Đăng nhập");
+        btnSignIn.setText("Đăng Nhập");
         btnSignIn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSignInActionPerformed(evt);
             }
         });
 
-        btnForgotPassword.setText("Quên mật khẩu");
+        btnForgotPassword.setText("Quên Mật Khẩu");
         btnForgotPassword.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnForgotPasswordActionPerformed(evt);
             }
         });
 
-        btnSignUp.setText("Đăng ký");
-        btnSignUp.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSignUpActionPerformed(evt);
-            }
-        });
+        lblSignIn.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        lblSignIn.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblSignIn.setText("Đăng Nhập");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -80,61 +74,58 @@ public class SignInUI extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(4, 4, 4)
+                            .addComponent(lblPassword)
+                            .addGap(278, 278, 278))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                            .addContainerGap()
+                            .addComponent(lblUsername)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(tfPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(tfUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(19, 19, 19)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(lblEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(tfEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(tfPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(84, 84, 84)
+                        .addComponent(lblSignIn, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(80, 80, 80)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(58, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btnSignIn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnForgotPassword, javax.swing.GroupLayout.DEFAULT_SIZE, 121, Short.MAX_VALUE)
-                    .addComponent(btnSignUp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(140, 140, 140))
+                        .addGap(153, 153, 153)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btnSignIn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnForgotPassword, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addContainerGap(60, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(26, 26, 26)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(36, 36, 36)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(39, 39, 39)
+                .addComponent(lblSignIn)
+                .addGap(34, 34, 34)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tfEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(32, 32, 32)
+                    .addComponent(tfUsername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblUsername))
+                .addGap(39, 39, 39)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(tfPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(27, 27, 27)
+                    .addComponent(lblPassword))
+                .addGap(30, 30, 30)
                 .addComponent(btnSignIn)
                 .addGap(18, 18, 18)
                 .addComponent(btnForgotPassword)
-                .addGap(18, 18, 18)
-                .addComponent(btnSignUp)
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnSignUpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSignUpActionPerformed
-        // TODO add your handling code here:
-        new SignUpUI().setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_btnSignUpActionPerformed
+    private void tfPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfPasswordActionPerformed
+
+    }//GEN-LAST:event_tfPasswordActionPerformed
 
     private void btnSignInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSignInActionPerformed
         // TODO add your handling code here:
-        if(SignIn.SignInAdmin(tfEmail.getText(), tfPassword.getText())){
+        if(SignIn.SignInUser(tfUsername.getText(), tfPassword.getText())){
             this.dispose();
             new HomeUI().setVisible(true);
         }else{
@@ -152,10 +143,6 @@ public class SignInUI extends javax.swing.JFrame {
         new ForgotPasswordUI().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnForgotPasswordActionPerformed
-
-    private void formWindowStateChanged(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowStateChanged
-        // TODO add your handling code here:
-    }//GEN-LAST:event_formWindowStateChanged
 
     /**
      * @param args the command line arguments
@@ -185,11 +172,10 @@ public class SignInUI extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnForgotPassword;
     private javax.swing.JButton btnSignIn;
-    private javax.swing.JButton btnSignUp;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel lblEmail;
     private javax.swing.JLabel lblPassword;
-    private javax.swing.JTextField tfEmail;
+    private javax.swing.JLabel lblSignIn;
+    private javax.swing.JLabel lblUsername;
     private javax.swing.JTextField tfPassword;
+    private javax.swing.JTextField tfUsername;
     // End of variables declaration//GEN-END:variables
 }
